@@ -38,6 +38,7 @@ def get_clerks(clerk_df, judge, year):
     return res_clerk
 
 def parse_sentences(sentences_dir, out_path, clerk_path, meta_path, fws, case_year=-1):
+    print("parsing year ", case_year)
     clerk_df = pd.read_csv(clerk_path, encoding='ISO-8859-1')
     meta_df = pd.read_stata(meta_path)
     
@@ -110,8 +111,8 @@ def feature_norm(cleaned_csv, isFolder=False):
 serv_sentences_dir = '/data/Dropbox/Projects/Ash_Chen/clerkships/sentences_new/'
 serv_fw_pkl = '/data/Dropbox/Projects/Ash_Chen/clerkships/function_words.pkl'
 serv_fws = pickle.load(open(serv_fw_pkl, 'rb'))
-serv_clerk_path = '/data/Dropbox/Projects/Ash_Chen/clerkships/Circuit-clerkship_1995_2016_merged_martindale.csv'
-serv_outpath = '/data/Dropbox/Projects/Ash_Chen/clerkships/Parsed_Functional/'
+serv_clerk_path = '/data/Dropbox/Projects/Ash_Chen/clerkships/clerkship_1995_2016_merged_martindale.csv'
+serv_outpath = '/data/Dropbox/Projects/Ash_Chen/clerkships/functional_NYU_clerk/'
 serv_meta_path = '/data/Dropbox/Projects/Ash_Chen/clerkships/circuit_metadata_excerpt.dta'
 
 
